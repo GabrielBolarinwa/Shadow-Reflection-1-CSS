@@ -1,0 +1,66 @@
+@font-face {
+  font-family: Poppins;
+  src: url("../Fonts/Poppins-ExtraBold.ttf");
+}
+body {
+  overflow: hidden;
+  height: 100vh; /* 
+  display: flex;
+  place-content: center; */
+  background: #fff;
+  width: 100%;
+
+  overflow: hidden;
+}
+.container {
+  background: url("https://cdn.pixabay.com/photo/2016/07/05/00/28/background-1497873_1280.jpg")
+    rgba(0, 0, 0, 0.6);
+  background-blend-mode: color;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding-block-end: 2rem;
+  font-family: Poppins;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 15vw, 15rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  perspective: 2.5em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.glow,
+.glow-shadow {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+}
+
+.glow {
+  color: hsl(248, 16%, 39%);
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  color: rgba(0, 0, 0, 0);
+  mix-blend-mode: plus-lighter;
+  filter: drop-shadow(0px 0px 5px hsl(248, 16%, 39%))
+    drop-shadow(0px 0px 10px hsl(248, 16%, 39%));
+}
+
+.glow-shadow {
+  color: hsl(20, 100%, 98%);
+  mix-blend-mode: soft-light;
+  filter: brightness(2);
+  transform: translateY(10%) rotateX(81deg) scaleY(-1) translateY(-15%)
+    scaleY(1.35);
+}
