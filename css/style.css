@@ -1,15 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 @font-face {
   font-family: Poppins;
   src: url("Poppins-ExtraBold.ttf");
 }
 body {
   overflow: hidden;
-  height: 100vh; /* 
-  display: flex;
-  place-content: center; */
+  height: 100vh;
   background: #fff;
   width: 100%;
-
+  position: relative;
   overflow: hidden;
 }
 .container {
@@ -18,23 +21,19 @@ body {
   background-blend-mode: color;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
-  aspect-ratio: 16/9;
+  background-size: cover;
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
-  padding-block-end: 2rem;
   font-family: Poppins;
   font-weight: 900;
   font-size: clamp(1.5rem, 15vw, 15rem);
   font-weight: 900;
   text-transform: uppercase;
   perspective: 2.5em;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .glow,
@@ -46,7 +45,6 @@ body {
 }
 
 .glow {
-  color: hsl(248, 16%, 39%);
   background: inherit;
   background-size: cover;
   background-position: center;
@@ -55,6 +53,10 @@ body {
   mix-blend-mode: plus-lighter;
   filter: drop-shadow(0px 0px 5px hsl(248, 16%, 39%))
     drop-shadow(0px 0px 10px hsl(248, 16%, 39%));
+  left: 50%;
+  top: 50%;
+  width: fit-content;
+  transform: translate(-50%, -50%);
 }
 
 .glow-shadow {
@@ -63,4 +65,12 @@ body {
   filter: brightness(2);
   transform: translateY(10%) rotateX(81deg) scaleY(-1) translateY(-15%)
     scaleY(1.35);
+  bottom: 0;
+}
+
+@media (orientation: portrait) {
+  .glow-shadow {
+    transform: translateY(7%) rotateX(81deg) scaleY(-0.27) translateY(-11%)
+      scaleY(7.35);
+  }
 }
